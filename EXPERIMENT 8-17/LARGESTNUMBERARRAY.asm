@@ -1,0 +1,13 @@
+	   LXI H,8000
+	   MVI C,04
+	   MOV A,M
+
+LOOP:	   INX H
+	   CMP M
+	   JNC LARGEST
+	   MOV A,M
+
+LARGEST:	   DCR C
+	   JNZ LOOP
+	   STA 8010
+	   HLT
